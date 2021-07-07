@@ -1,0 +1,26 @@
+managed implementation in class zbp_lab_i_reader unique;
+strict;
+
+define behavior for zlab_i_reader alias Reader
+persistent table zlab_d_reader_a
+lock master
+etag master LastChangedAt
+authorization master ( instance )
+{
+  field ( readonly ) CreatedAt, CreatedBy, LastChangedAt, LastChangedBy;
+
+  create;
+  update;
+  delete;
+
+  mapping for zlab_d_reader_a
+  {
+    PersonId      = person_id;
+    BirthDate     = birth_date;
+    PhoneNumber   = phone_number;
+    CreatedBy     = created_by;
+    CreatedAt     = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+  }
+}

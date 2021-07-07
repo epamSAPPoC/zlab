@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service Definition: Author'
+define service zlab_ui_author {
+  expose zlab_c_author as Author;
+  expose zlab_i_author_t as AuthorTxt;
+  expose zlab_c_book as Book;
+}

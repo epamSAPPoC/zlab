@@ -1,0 +1,8 @@
+projection;
+
+define behavior for zlab_c_author alias Author
+{
+  use create;
+  use update;
+  use delete;
+}

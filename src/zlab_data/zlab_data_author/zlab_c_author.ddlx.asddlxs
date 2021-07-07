@@ -1,0 +1,90 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeName: 'Author',
+                  typeNamePlural: 'Authors',
+                  imageUrl: 'ImageUrl', 
+                  title.value: 'FirstName',
+                  description.value: 'LastName'
+                }
+annotate view zlab_c_author with
+{
+  @UI.facet: [{
+                  id:              'GeneralInformation',
+                  type:            #COLLECTION,
+                  label:           'General Information',
+                  position:        10
+              },
+              {
+                  id:              'AdminDataCollection',
+                  type:            #COLLECTION,
+                  label:           'Admin Data',
+                  position:        20
+              },
+              {
+                  id:              'BooksCollection',
+                  type:            #COLLECTION,
+                  label:           'Books',
+                  position:        30
+              },
+              {
+                  id:              'BasicData',
+                  purpose:         #STANDARD ,
+                  parentId:        'GeneralInformation',
+                  type:            #FIELDGROUP_REFERENCE,
+                  label:           'Basic Data',
+                  position:        10,
+                  targetQualifier: 'BasicData'
+               },
+              {
+                  id:              'AdminData',
+                  purpose:         #STANDARD ,
+                  parentId:        'AdminDataCollection',
+                  type:            #FIELDGROUP_REFERENCE,
+                  label:           'Admin Data',
+                  position:        20,
+                  targetQualifier: 'AdminData'
+               },
+               {
+                  id:              'BooksLI',
+                  purpose:         #STANDARD ,
+                  parentId:        'BooksCollection',
+                  type:            #LINEITEM_REFERENCE,
+                  label:           'Books',
+                  targetElement:   '_Book'
+               }]
+
+  @UI.lineItem:       [{ position: 10, importance: #HIGH }]
+  @UI.fieldGroup:     [{ position: 10, qualifier: 'BasicData' }]
+  AuthorId;
+
+  @UI.lineItem:       [{ position: 20, importance: #HIGH }]
+  @UI.fieldGroup:     [{ position: 20, qualifier: 'BasicData' }]
+  FirstName;
+
+  @UI.lineItem:       [{ position: 30, importance: #HIGH }]
+  @UI.fieldGroup:     [{ position: 30, qualifier: 'BasicData' }]
+  LastName;
+  
+  @UI.selectionField: [{ position: 10 }]
+  @UI.lineItem:       [{ position: 40, importance: #HIGH }]
+  @UI.fieldGroup:     [{ position: 40, qualifier: 'BasicData' }]
+  @UI.dataPoint:       { title: 'Birth Day' }
+  BirthDate;
+
+  @UI.lineItem:       [{ position: 50, importance: #HIGH }]
+  @UI.fieldGroup:     [{ position: 50, qualifier: 'BasicData' }]
+  @UI.dataPoint:       { title: 'Country' }
+  Country;
+
+  @UI.fieldGroup:     [{ position: 10, qualifier: 'AdminData' }]
+  CreatedBy;
+
+  @UI.fieldGroup:     [{ position: 20, qualifier: 'AdminData' }]
+  CreatedAt;
+
+  @UI.fieldGroup:     [{ position: 30, qualifier: 'AdminData' }]
+  LastChangedBy;
+
+  @UI.fieldGroup:     [{ position: 40, qualifier: 'AdminData' }]
+  LastChangedAt;
+
+}

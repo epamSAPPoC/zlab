@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition: Reader'
+define service zlab_ui_reader {
+  expose zlab_c_reader as Reader;
+  expose zlab_i_reader_t as ReaderTxt;
+}

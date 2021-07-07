@@ -1,0 +1,10 @@
+@EndUserText.label: 'Service Definition: Booking'
+define service zlab_ui_booking {
+  expose zlab_c_booking as Booking;
+  expose zlab_i_reader as Reader;
+  expose zlab_i_status as Status;
+  expose zlab_i_book as Book;
+  expose zlab_sh_reader as ReaderSH;
+  expose zlab_sh_book as BookSH;
+  expose zlab_sh_status as StatusSH;
+}

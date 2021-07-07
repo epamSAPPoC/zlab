@@ -1,0 +1,30 @@
+managed implementation in class zbp_lab_i_book unique;
+strict;
+
+define behavior for zlab_i_book alias Book
+persistent table zlab_d_book_a
+lock master
+etag master LastChangedAt
+authorization master ( instance )
+{
+  create;
+  update;
+  delete;
+
+  field ( mandatory : create ) AuthorId;
+  field ( readonly ) CreatedAt, CreatedBy, LastChangedAt, LastChangedBy;
+
+  mapping for zlab_d_book_a
+  {
+    BookId = book_id;
+    BookName = book_name;
+    AuthorId = author_id;
+    CopyQty = copy_qty;
+    PagesNum = pages_num;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+
+  }
+}
