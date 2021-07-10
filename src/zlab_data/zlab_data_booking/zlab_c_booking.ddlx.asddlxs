@@ -65,6 +65,8 @@ annotate view zlab_c_booking with
                   position:        20,
                   targetQualifier: 'AdminData'
                }]
+  
+  @UI.identification: [{ type: #FOR_ACTION, dataAction: 'returnTheBook', label: 'Return the Book' }]
                             
   @UI.hidden: true 
   BookingUuid;
