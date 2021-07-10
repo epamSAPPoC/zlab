@@ -25,43 +25,18 @@ CLASS zcl_lab_generate_data_booking IMPLEMENTATION.
     DATA: lt_data TYPE TABLE OF zlab_d_booking_a.
 
     lt_data  = VALUE #(
-    (
-      booking_id = '1' book_id = '1' person_id = '1' booking_beg_date = '20210601'
-      booking_beg_time = '090000' booking_end_date = '20210801' booking_end_time = '090000'
-      booking_status_id = '1'
-
-    )
-    (
-      booking_id = '2' book_id = '2' person_id = '2' booking_beg_date = '20210602'
-      booking_beg_time = '100000'
-      booking_status_id = '2'
-
-    )
-    (
-      booking_id = '3' book_id = '3' person_id = '3' booking_beg_date = '20210603'
-      booking_beg_time = '110000'
-      booking_status_id = '3'
-
-    )
-    (
-      booking_id = '4' book_id = '4' person_id = '4' booking_beg_date = '20210604'
-      booking_beg_time = '120000'
-      booking_status_id = '4'
-
-    )
-    (
-      booking_id = '5' book_id = '5' person_id = '5' booking_beg_date = '20210605'
-      booking_beg_time = '130000'
-      booking_status_id = '5'
-
-    )
-    (
-      booking_id = '6' book_id = '6' person_id = '1' booking_beg_date = '20210606'
-      booking_beg_time = '140000'
-      booking_status_id = '2'
-
-    )
-    ).
+    ( booking_id = '1' book_id = '1' person_id = '1' booking_beg_date = '20210601' booking_beg_time = '090000'
+      booking_end_date = '20210801' booking_end_time = '090000' booking_status_id = '1' )
+    ( booking_id = '2' book_id = '2' person_id = '2' booking_beg_date = '20210602'
+      booking_beg_time = '100000' booking_status_id = '2' )
+    ( booking_id = '3' book_id = '3' person_id = '3' booking_beg_date = '20210603'
+      booking_beg_time = '110000' booking_status_id = '3' )
+    ( booking_id = '4' book_id = '4' person_id = '4' booking_beg_date = '20210604'
+      booking_beg_time = '120000' booking_status_id = '4' )
+    ( booking_id = '5' book_id = '5' person_id = '5' booking_beg_date = '20210605'
+      booking_beg_time = '130000' booking_status_id = '5' )
+    ( booking_id = '6' book_id = '6' person_id = '1' booking_beg_date = '20210606'
+      booking_beg_time = '140000' booking_status_id = '2' ) ).
 
     LOOP AT lt_data ASSIGNING FIELD-SYMBOL(<ls_data>).
       TRY.
