@@ -1,0 +1,11 @@
+@EndUserText.label: 'OVP: Booking'
+define service zlab_ui_ovp_booking {
+  expose zlab_c_ovp_booking as ALPBooking;
+  expose zlab_i_ovp_booking_flt as FLTBooking;
+  expose zlab_i_reader as Reader;
+  expose zlab_i_book as Book;
+  expose zlab_i_status as Status;
+  expose zlab_sh_author as SHAuthor;
+  expose zlab_sh_book as SHBook;
+  expose zlab_sh_status as SHStatus;
+}

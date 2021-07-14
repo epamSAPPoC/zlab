@@ -1,0 +1,24 @@
+@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'OVP: Booking'
+define view entity zlab_i_ovp_booking
+  as select from zlab_d_booking_a
+  association [1..1] to zlab_i_reader as _Reader on $projection.PersonId = _Reader.PersonId
+  association [1..1] to zlab_i_book   as _Book   on $projection.BookId = _Book.BookId
+  association [1..1] to zlab_i_status as _Status on $projection.BookingStatusId = _Status.StatusId
+{
+  key booking_uuid                                                                                as BookingUuid,
+      booking_id                                                                                  as BookingId,
+      book_id                                                                                     as BookId,
+      person_id                                                                                   as PersonId,
+      concat_with_space(_Reader._ReaderTxt.PersonFirstName, _Reader._ReaderTxt.PersonLastName, 1) as PersonName,
+      booking_status_id                                                                           as BookingStatusId,
+      booking_beg_date                                                                            as BookingBegDate,
+      booking_beg_time                                                                            as BookingBegTime,
+      booking_end_date                                                                            as BookingEndDate,
+      booking_end_time                                                                            as BookingEndTime,
+      1                                                                                           as BookQuantity,
+      _Reader,
+      _Book,
+      _Status
+}

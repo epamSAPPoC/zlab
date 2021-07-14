@@ -1,0 +1,6 @@
+@EndUserText.label: 'ALP: Book'
+define service zlab_ui_alp_book {
+  expose zlab_c_alp_book as ALPBook;
+  expose zlab_i_author as Author;
+  expose zlab_sh_author as SHAuthor;
+}
